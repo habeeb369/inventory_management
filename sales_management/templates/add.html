@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style3.css' %}">
+    <title>add product</title>
+
+
+</head>
+<style>
+    /* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #108d7c;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #eeeed9;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #eeeed9;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #eeeed9;
+    background-color: #901717;
+    color: #eeeed9;
+  
+  
+  }
+  
+  .form-group input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #901717;
+    color: #eeeed9;
+    border-radius: 5px;
+    border: 1px solid #eeeed9;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .form-group input[type="submit"]:hover {
+    background-color: #434a89;
+  }
+</style>
+<body>
+    <center><h1>ADD PRODUCT</h1></center>
+    <form action="../saveUser/" method="POST"> 
+        {% csrf_token %} 
+        <div class="container">   
+            <div class="form-group">
+                <label for="id">Product ID:</label>
+                <input type="text" id="id" name="id" placeholder="Enter Product ID" required>
+              </div>
+
+            <div class="form-group">
+                <label for="name">Product Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter Product Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" placeholder="Enter Price" required>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Add Product"> 
+            </div>
+                <a href="http://127.0.0.1:8000/stock/index/">go back to home</a>
+              
+            
+        </div>   
+    </form>     
+</body>
+</html>
